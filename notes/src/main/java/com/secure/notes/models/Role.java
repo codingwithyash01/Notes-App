@@ -2,18 +2,13 @@ package com.secure.notes.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
+    @Getter
     @Entity
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Data
     @Table(name = "roles")
     public class Role{
 
@@ -36,31 +31,23 @@ import java.util.Set;
             this.roleName = roleName;
         }
 
-        public Role() {
-        }
-
-        public Integer getRoleId() {
-            return roleId;
-        }
-
         public void setRoleId(Integer roleId) {
             this.roleId = roleId;
-        }
-
-        public AppRole getRoleName() {
-            return roleName;
         }
 
         public void setRoleName(AppRole roleName) {
             this.roleName = roleName;
         }
 
-        public Set<User> getUsers() {
-            return users;
-        }
-
         public void setUsers(Set<User> users) {
             this.users = users;
+        }
+
+        public AppRole getRoleName() {
+            return roleName;
+        }
+
+        public Role() {
         }
 
         public Role(Integer roleId, AppRole roleName, Set<User> users) {
